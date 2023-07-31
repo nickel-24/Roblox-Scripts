@@ -1,0 +1,11 @@
+-- Object gets destroyed after touching
+
+local spleef = script.Parent
+local canTouch = true
+
+local function onTouch(otherPart)
+	wait(.5)
+	spleef:Destroy()
+end
+
+spleef.Touched:Connect(onTouch)
