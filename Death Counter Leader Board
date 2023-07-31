@@ -1,0 +1,14 @@
+-- Leaderboard with Point Value
+
+local function addBoard(player)
+	local board = Instance.new("Folder")
+	board.Parent = player
+	board.Name = "leaderstats"
+	
+	local points = Instance.new("IntValue")
+	points.Parent = board
+	points.Name = "Deaths"
+	points.Value = 0
+end
+
+game.Players.PlayerAdded:Connect(addBoard)
