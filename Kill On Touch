@@ -1,0 +1,16 @@
+-- Sets Humanoid health to 0
+
+local KillBrick = script.Parent
+
+local function onTouch(otherPart)
+	local hum = otherPart.Parent:FindFirstChild("Humanoid")
+	if hum then
+		local player = game.Players:GetPlayerFromCharacter(otherPart.Parent)
+		if player then
+			print("Part touched the kill brick", otherPart.name)
+			hum.Health = 0
+		end
+	end
+end
+
+KillBrick.Touched:Connect(onTouch)
