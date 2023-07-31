@@ -1,0 +1,21 @@
+-- Sets Humanoid health to 0
+
+local KillBrick = script.Parent
+local canTouch = true
+
+local function onTouch(otherPart)
+	local hum = otherPart.Parent:FindFirstChild("Humanoid")
+	if hum then
+		local player = game.Players:GetPlayerFromCharacter(otherPart.Parent)
+		if player and canTouch then
+			canTouch = false -- Temporarily Disables Kill Command
+			local Deaths = player.leaderstats.Deaths
+			Deaths.Value = Deaths.Value + 1 -- Adds Deaths, or Points, to Leaderboard
+			hum.Health = 0
+			wait(3)
+			canTouch = true -- Re-enables Kill Command
+		end
+	end
+end
+
+KillBrick.Touched:Connect(onTouch)
