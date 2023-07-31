@@ -1,0 +1,16 @@
+-- Unanchoring
+
+local Wall2 = script.Parent
+
+local function Anchored(boolean)
+	while true do
+		wait(3)
+		Wall2.Anchored = false
+	break
+	end
+end
+
+while true do
+	Anchored(false)
+	break
+end
