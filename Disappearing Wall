@@ -1,0 +1,31 @@
+-- Changing Wall Visibility
+
+local Wall = script.Parent
+
+local function changeVis(change)
+	for i=1, 4, 1 do
+		Wall.Transparency = Wall.Transparency + change
+		wait(1)
+	end
+end
+
+while Wall.Transparency<1 do
+	wait(1)
+	changeVis(.25)
+end
+
+print("Wall.Transparency = ", Wall.Transparency)
+
+-- Changing Collision
+
+local function CanCollide(boolean)
+	while true do
+		Wall.CanCollide = false
+	break
+	end
+end
+
+while true do
+	CanCollide(false)
+	break
+end
